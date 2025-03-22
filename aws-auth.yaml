@@ -1,0 +1,19 @@
+apiVersion: v1
+data:
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::339713057882:role/eksctl-expense-nodegroup-expense-NodeInstanceRole-PBcOlPT94fzZ
+      username: system:node:{{EC2PrivateDNSName}}
+  mapUsers: |
+    - groups:
+      - default-tainee
+      userarn: arn:aws:iam::339713057882:user/Hemu
+      username: hemu
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2025-03-22T05:48:04Z"
+  name: aws-auth
+  namespace: kube-system
+  uid: 33d5c111-1ecb-49e5-ba8c-20b3771acc39
